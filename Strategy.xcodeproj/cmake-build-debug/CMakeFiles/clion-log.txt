@@ -1,1 +1,0 @@
-CMakeLists.txt not found in /Users/cqb/Desktop/AI/AI_Project/AI_project_mac/Strategy/Strategy.xcodeproj

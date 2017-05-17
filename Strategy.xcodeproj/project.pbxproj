@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045B18E11EC849C900302FD9 /* Board.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 045B18DF1EC849C900302FD9 /* Board.cpp */; };
+		048DE8E61ECB378B00C225E5 /* Board.h in Headers */ = {isa = PBXBuildFile; fileRef = 048DE8E51ECB378B00C225E5 /* Board.h */; };
 		75F348311AB185E20067F028 /* Judge.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 75F348301AB185E20067F028 /* Judge.cpp */; };
 		75F348361AB186440067F028 /* Judge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75F348321AB186440067F028 /* Judge.h */; };
 		75F348371AB186440067F028 /* Point.h in Headers */ = {isa = PBXBuildFile; fileRef = 75F348331AB186440067F028 /* Point.h */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		045B18DF1EC849C900302FD9 /* Board.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Board.cpp; sourceTree = "<group>"; };
+		048DE8E51ECB378B00C225E5 /* Board.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
 		751BF40F1AB094550075BFA1 /* libStrategy.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libStrategy.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F348301AB185E20067F028 /* Judge.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Judge.cpp; sourceTree = "<group>"; };
 		75F348321AB186440067F028 /* Judge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Judge.h; sourceTree = "<group>"; };
@@ -37,11 +41,13 @@
 		751BF4041AB094550075BFA1 = {
 			isa = PBXGroup;
 			children = (
+				048DE8E51ECB378B00C225E5 /* Board.h */,
+				045B18DF1EC849C900302FD9 /* Board.cpp */,
 				75F348321AB186440067F028 /* Judge.h */,
-				75F348301AB185E20067F028 /* Judge.cpp */,
 				75F348331AB186440067F028 /* Point.h */,
-				75F348351AB186440067F028 /* Strategy.h */,
 				75F348341AB186440067F028 /* Strategy.cpp */,
+				75F348351AB186440067F028 /* Strategy.h */,
+				75F348301AB185E20067F028 /* Judge.cpp */,
 				751BF4101AB094550075BFA1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +68,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75F348361AB186440067F028 /* Judge.h in Headers */,
+				048DE8E61ECB378B00C225E5 /* Board.h in Headers */,
 				75F348371AB186440067F028 /* Point.h in Headers */,
 				75F348391AB186440067F028 /* Strategy.h in Headers */,
 			);
@@ -118,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045B18E11EC849C900302FD9 /* Board.cpp in Sources */,
 				75F348311AB185E20067F028 /* Judge.cpp in Sources */,
 				75F348381AB186440067F028 /* Strategy.cpp in Sources */,
 			);

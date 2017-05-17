@@ -1,99 +1,0 @@
-TStrategy
-v5
-r1
-cCheck dependencies
-cCompileC build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.o /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Strategy.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Judge.o /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Judge.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cLd /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib normal i386
-cGenerateDSYMFile /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib.dSYM /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib
-
-N/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk
-c00000000503F1B7700000000000000AA
-t1346313079
-s170
-
-N/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Judge.cpp
-c0000000055014E070000000000000A5B
-t1426148871
-s2651
-i"Judge.h"
-
-N/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Judge.h
-c0000000055311FAF0000000000000C87
-t1429282735
-s3207
-
-N/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Strategy.cpp
-c0000000055327F830000000000000D58
-t1429372803
-s3416
-
-N/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib
-t2
-s0
-
-N/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib.dSYM
-t2
-s0
-
-N/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Judge.o
-t2
-s0
-
-N/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.LinkFileList
-c00000000553285890000000000000117
-t1429374345
-s279
-
-N/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.o
-t2
-s0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies6fd7eb08bde2ba41^e7c41e09bde2ba41^---0#1#0#--18"Check dependencies36"F9399E7D-CF54-40CB-B916-C43041C01369-
-
-CCompileC build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Judge.o /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Judge.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s451067145.124316
-e451067145.384024
-r1
-xCompileC
-xbuild/Strategy.build/Release/Strategy.build/Objects-normal/i386/Judge.o
-x/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Judge.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection83"Compile /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Judge.cpp72182009bde2ba41^0ab96209bde2ba41^---0#0#0#-19%DVTDocumentLocation2@91"file://localhost/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Judge.cpp0000000000000000^2992"CompileC build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Judge.o Judge.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Strategy-generated-files.hmap -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Strategy-own-target-headers.hmap -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Strategy-all-target-headers.hmap -iquote /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Strategy-project-headers.hmap -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/DerivedSources/i386 -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/DerivedSources -F/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release -MMD -MT dependencies -MF /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Judge.d --serialize-diagnostics /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Judge.dia -c /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Judge.cpp -o /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Judge.o36"277EFEC6-84A2-4B96-A5F4-537748D6B733-
-
-CCompileC build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.o /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Strategy.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s451067145.124303
-e451067145.766990
-r1
-xCompileC
-xbuild/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.o
-x/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Strategy.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection86"Compile /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Strategy.cpp40182009bde2ba41^2159c409bde2ba41^---0#0#0#-19%DVTDocumentLocation2@94"file://localhost/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Strategy.cpp0000000000000000^3010"CompileC build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.o Strategy.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -std=gnu++11 -stdlib=libc++ -Wno-trigraphs -fpascal-strings -Os -Wno-missing-field-initializers -Wno-missing-prototypes -Wreturn-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wempty-body -Wuninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -fasm-blocks -Wdeprecated-declarations -Winvalid-offsetof -mmacosx-version-min=10.8 -g -fvisibility-inlines-hidden -Wno-sign-conversion -iquote /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Strategy-generated-files.hmap -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Strategy-own-target-headers.hmap -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Strategy-all-target-headers.hmap -iquote /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Strategy-project-headers.hmap -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/DerivedSources/i386 -I/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/DerivedSources -F/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release -MMD -MT dependencies -MF /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.d --serialize-diagnostics /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.dia -c /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/Strategy.cpp -o /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.o36"2BC4844D-6BBD-48E4-AEB5-64F8974ABDDF-
-
-CGenerateDSYMFile /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib.dSYM /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib
-s451067145.927121
-e451067145.953343
-r1
-xGenerateDSYMFile
-x/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib.dSYM
-x/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib
-
-CLd /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib normal i386
-s451067145.767154
-e451067145.926967
-r1
-xLd
-x/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib
-xnormal
-xi386
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection102"Link /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylibbd8ac409bde2ba41^d74ded09bde2ba41^---0#0#0#--966"Ld build/Release/libStrategy.dylib normal i386    cd /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy    setenv MACOSX_DEPLOYMENT_TARGET 10.8    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -dynamiclib -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk -L/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release -F/Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release -filelist /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Strategy.build/Release/Strategy.build/Objects-normal/i386/Strategy.LinkFileList -install_name /usr/local/lib/libStrategy.dylib -mmacosx-version-min=10.8 -stdlib=libc++ -single_module -compatibility_version 1 -current_version 1 -o /Users/evison/Documents/projects/msp/AI_project_2015_mac/Strategy/build/Release/libStrategy.dylib36"C2D9ED13-D287-448E-B2BB-976EADB5AC67-
-
