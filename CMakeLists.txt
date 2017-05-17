@@ -4,13 +4,13 @@ project(Strategy)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
+        Strategy.cpp
+        Strategy.h
         Board.cpp
         Board.h
         Judge.cpp
         Judge.h
         Point.h
-        Strategy.cpp
-        Strategy.h
         MonteCarloTreeSearch.h
         )
 
