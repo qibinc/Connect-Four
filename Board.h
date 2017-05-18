@@ -15,7 +15,7 @@
 #include "Judge.h"
 #include "MonteCarloTreeSearch.h"
 
-#define TIME_LIMIT 0.1
+#define TIME_LIMIT 2
 #define INF 1000000000
 #define C 0.8
 
@@ -25,19 +25,17 @@
 class BoardState : public MonteCarloSearchState
 {
     u_short *chessState, *top;
-    int numberOfChildStates, nextChildState;
+    int nextChildState;
 	std::pair<int, int> putLocation;
 //    player 表示当前轮到谁落子
     bool player;
-
-    void SetNumberOfChildStates();
 
     std::pair<int, int> RandomPut();
 
     std::pair<int, int> Put();
 
-    void ToBoard();
 	static int **board;
+	void ToBoard();
 
 public:
 	static int BoardWidth, BoardHeight, noX, noY;
@@ -68,11 +66,11 @@ public:
 
 class BoardTree : public MonteCarloSearchTree
 {
-	void BackTrace(MonteCarloSearchTreeNode *node, int value);
-
 	float UCB1(MonteCarloSearchTreeNode *parent, MonteCarloSearchTreeNode *child);
 
 	MonteCarloSearchTreeNode *BestChild(MonteCarloSearchTreeNode *parent);
+
+	void BackTrace(MonteCarloSearchTreeNode *node, int value);
 
 public:
     BoardTree(bool player) : MonteCarloSearchTree(new BoardTreeNode(new BoardState(player), nullptr))
@@ -80,9 +78,9 @@ public:
 
     MonteCarloSearchTreeNode *TreePolicy() override;
 
-	std::pair<int, int> MCTS();
-
 	void MoveRoot(std::pair<int, int> put);
+
+	std::pair<int, int> MonteCarloTreeSearch();
 };
 
 #endif /* Board_hpp */

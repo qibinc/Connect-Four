@@ -5,16 +5,56 @@
 #include <iostream>
 #include "Board.h"
 
-int BoardState::BoardHeight = 8, BoardState::BoardWidth = 8;
-int BoardState::noX = 7;
-int BoardState::noY = 4;
+int BoardState::BoardHeight = 9, BoardState::BoardWidth = 9;
+int BoardState::noX = 3, BoardState::noY = 1;
+int **BoardState::board;
 
 int main()
 {
-	srand(time(0));
-	MonteCarloSearchTree *boardTree= new BoardTree(1);
+	srand((unsigned int) time(0));
 
-	std::pair<int, int> put = ((BoardTree*)boardTree)->MCTS();
-	std::cout << put.first << " " << put.second << std::endl;
+	BoardTree *boardTree= new BoardTree(0);
+
+//	Round 1
+	boardTree->MoveRoot(std::make_pair(0, 3));
+
+	std::pair<int, int> put = boardTree->MonteCarloTreeSearch();
+
+	boardTree->MoveRoot(put);
+
+//	Round 2
+	boardTree->MoveRoot(std::make_pair(1, 5));
+
+	put = boardTree->MonteCarloTreeSearch();
+
+	boardTree->MoveRoot(put);
+
+//	Round 3
+	boardTree->MoveRoot(std::make_pair(0, 6));
+
+	put = boardTree->MonteCarloTreeSearch();
+
+	boardTree->MoveRoot(put);
+
+//	Round 4
+	boardTree->MoveRoot(std::make_pair(1, 6));
+
+	put = boardTree->MonteCarloTreeSearch();
+
+	boardTree->MoveRoot(put);
+
+//	Round 5
+	boardTree->MoveRoot(std::make_pair(2, 5));
+
+	put = boardTree->MonteCarloTreeSearch();
+
+	boardTree->MoveRoot(put);
+
+//	Round 6
+	boardTree->MoveRoot(std::make_pair(0, 0));
+
+	put = boardTree->MonteCarloTreeSearch();
+
+	boardTree->MoveRoot(put);
 
 }
