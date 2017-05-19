@@ -90,56 +90,38 @@
 >   信心上限树算法(UCT)
 >
 >     function UCTSEARCH(𝑠0)
->
 >       以状态𝑠0创建根节点𝑣0;
->
 >       while 尚未用完计算时长 do:
->
 >         𝑣𝑙 ←TREEPOLICY(𝑣0);
->
 >         ∆←DEFAULTPOLICY(s(𝑣𝑙 ));
->
 >         BACKUP(𝑣𝑙 , ∆);
->
 >       end while
 >       return 𝑎(BESTCHILD(𝑣0, 0));
 >
 >     function TREEPOLICY(𝑣)
 >       while 节点𝑣不是终止节点 do:
->
 >         if 节点𝑣是可扩展的 then:
->
 >           return EXPAND(𝑣)
->
 >         else:
 >           𝑣 ← BESTCHILD(𝑣, 𝑐)
->
 >       return 𝑣
 >
 >     function EXPAND(𝑣)
 >       选择行动𝑎 ∈ 𝐴(𝑠𝑡𝑎𝑡𝑒(𝑣))中尚未选择过的行动
->
 >       向节点𝑣添加子节点𝑣′，使得𝑠(𝑣′)= 𝑓(𝑠(𝑣), 𝑎), 𝑎(𝑣′) = 𝑎
->
 >       return 𝑣′
 >
 >     function BESTCHILD(𝑣, 𝑐)
 >       return 𝑎𝑟𝑔𝑚𝑎𝑥𝑣′∈𝑐h𝑖𝑙𝑑𝑟𝑒𝑛 𝑜𝑓 𝑣 (𝑄(𝑣′) + 𝑐√2𝑙𝑛(𝑁(𝑣)))
 >
 >     function DEFAULTPOLICY(𝑠)
->
 >       while 𝑠不是终止状态 do:
->
 >         以等概率选择行动𝑎 ∈ 𝐴(𝑠)
->
 >         𝑠 ← 𝑓(𝑠, 𝑎)
->
 >         return 状态𝑠的收益
 >
 >     function BACKUP(𝑣, Δ)
->
 >       while 𝑣 ≠ 𝑁𝑈𝐿𝐿 do:
->
 >         𝑁(𝑣) ← 𝑁(𝑣) + 1
 >         𝑄(𝑣) ← 𝑄(𝑣) + ∆
 >         ∆← −∆
