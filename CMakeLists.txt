@@ -4,14 +4,16 @@ project(Strategy)
 set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES
-        main.cpp
+        Strategy.cpp
+        Strategy.h
         Board.cpp
         Board.h
         Judge.cpp
         Judge.h
         Point.h
         MonteCarloTreeSearch.h
+#        main.cpp
         )
 
-#add_library(Strategy SHARED ${SOURCE_FILES})
-add_executable(Strategy ${SOURCE_FILES})
+add_library(Strategy SHARED ${SOURCE_FILES})
+#add_executable(Strategy ${SOURCE_FILES})

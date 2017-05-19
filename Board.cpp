@@ -7,6 +7,7 @@
 //
 
 #include "Board.h"
+#include <ctime>
 
 BoardState::BoardState(bool player)
 {
@@ -15,11 +16,12 @@ BoardState::BoardState(bool player)
 	top = new u_short[BoardWidth];
 	memset(chessState, 0, BoardWidth * sizeof(u_short));
 	memset(top, 0, BoardWidth * sizeof(u_short));
+	if (noX == 0) top[noY] = 1;
 	nextChildState = 0;
 	BoardState::board = new int*[BoardState::BoardHeight];
 	for (int i = 0; i < BoardState::BoardHeight; i++)
 		BoardState::board[i] = new int[BoardState::BoardWidth];
-//	srand((unsigned int) time(0));
+	srand((unsigned int) time(0));
 }
 
 BoardState::BoardState(const BoardState &predstate, int x, int y)
@@ -32,7 +34,7 @@ BoardState::BoardState(const BoardState &predstate, int x, int y)
 	memcpy(chessState, predstate.chessState, BoardWidth * sizeof(u_short));
 	memcpy(top, predstate.top, BoardWidth * sizeof(u_short));
 	chessState[y] |= player ? 0 : (1 << x);
-	top[y] = (u_short) (x + 1);
+	top[y] = (u_short) ((x + 1 == noX && y == noY) ? (x + 2) : (x + 1));
 	nextChildState = 0;
 //	判断终态
 	ToBoard();
@@ -44,7 +46,7 @@ BoardState::BoardState(const BoardState &predstate, int x, int y)
 	{
 //		确定子状态下一步可以下哪里
 		for (; nextChildState < BoardWidth; ++nextChildState)
-			if (top[nextChildState] < BoardHeight && !(top[nextChildState] == noX && nextChildState == noY && noX == BoardHeight - 1))
+			if (top[nextChildState] < BoardHeight)
 				break;
 	}
 }
@@ -56,7 +58,8 @@ BoardState::~BoardState()
 }
 
 std::pair<int, int> BoardState::RandomPut()
-{/*
+{
+/*
 	int cnt = 0;
 	for (int i = 0; i < BoardWidth; ++i)
 		if (top[i] < BoardHeight && !(top[i] == noX && i == noY && noX == BoardHeight - 1))
@@ -74,7 +77,7 @@ std::pair<int, int> BoardState::RandomPut()
 
 	int cnt = 0;
 	for (int i = 0; i < BoardWidth; ++i)
-		if (top[i] < BoardHeight && !(top[i] == noX && i == noY && noX == BoardHeight - 1))
+		if (top[i] < BoardHeight)
 			cnt++;
 
 	if (cnt == 0)
@@ -83,14 +86,10 @@ std::pair<int, int> BoardState::RandomPut()
 	cnt = rand() % cnt;
 
 	for (int i = 0; i < BoardWidth; ++i)
-		if (top[i] < BoardHeight && !(top[i] == noX && i == noY && noX == BoardHeight - 1))
+		if (top[i] < BoardHeight)
 		{
 			if (cnt-- == 0)
-			{
-				return (!(top[i] == noX && i == noY)) ? std::make_pair((int) top[i], i) : std::make_pair(
-						(int) top[i] + 1, i);
-
-			}
+				return std::make_pair(top[i], i);
 		}
 	std::cout << "RANDOM PUT ERROR!" << std::endl;
 	return std::make_pair(-1, -1);
@@ -99,11 +98,10 @@ std::pair<int, int> BoardState::RandomPut()
 
 std::pair<int, int> BoardState::Put()
 {
-	std::pair<int, int> &&location = (!(top[nextChildState] == noX && nextChildState == noY)) ? std::make_pair((int) top[nextChildState], nextChildState) : std::make_pair(
-			(int) top[nextChildState] + 1, nextChildState);
-
+	std::pair<int, int> &&location = std::make_pair((int) top[nextChildState], nextChildState);
+//  Prepare for the next
 	for (nextChildState++; nextChildState < BoardWidth; ++nextChildState)
-		if (top[nextChildState] < BoardHeight && !(top[nextChildState] == noX && nextChildState == noY && noX == BoardHeight - 1))
+		if (top[nextChildState] < BoardHeight)
 			break;
 	return location;
 //	std::cout << "PUT ERROR!" << std::endl;
@@ -151,7 +149,7 @@ int BoardState::DefaultPolicy()
 
 	while ((location = RandomPut()).first != -1)
 	{
-		this->top[location.second] = location.first + 1;
+		this->top[location.second] = (u_short) ((location.first + 1 == noX && location.second == noY) ? (location.first + 2) : (location.first + 1));
 
 		board[BoardHeight - location.first - 1][location.second] = player + 1;
 		if ((player && machineWin(BoardHeight - location.first - 1, location.second, BoardHeight, BoardWidth, board))
@@ -307,9 +305,7 @@ void BoardTree::MoveRoot(std::pair<int, int> put)
 std::pair<int, int> BoardTree::MonteCarloTreeSearch()
 {
 	int per_clock = 0;
-	clock_t startTime = clock();
-
-	while ((++per_clock % 100 != 0) || (clock() - startTime) < CLOCKS_PER_SEC * TIME_LIMIT)
+	while ((++per_clock % 100 != 0) || (time(nullptr) - StartTime) < TIME_LIMIT)
 	{
 		MonteCarloSearchTreeNode *newNode = TreePolicy();
 
@@ -321,6 +317,8 @@ std::pair<int, int> BoardTree::MonteCarloTreeSearch()
 	for (MonteCarloSearchTreeNode *child = root->GetFirstChild(); child != nullptr; child = child->GetNextSibling())
 	{
 //		Choose the most unfavorable decision of the enemy
+//		std::cout << child->GetTimes() << std::endl;
+
 		if (child->GetTimes() > maxTime)
 		{
 			maxTime = child->GetTimes();

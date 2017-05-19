@@ -73,6 +73,7 @@ class BoardTree : public MonteCarloSearchTree
 	void BackTrace(MonteCarloSearchTreeNode *node, int value);
 
 public:
+	static time_t StartTime;
     BoardTree(bool player) : MonteCarloSearchTree(new BoardTreeNode(new BoardState(player), nullptr))
     {}
 

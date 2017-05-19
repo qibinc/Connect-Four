@@ -5,56 +5,73 @@
 #include <iostream>
 #include "Board.h"
 
-int BoardState::BoardHeight = 9, BoardState::BoardWidth = 9;
-int BoardState::noX = 3, BoardState::noY = 1;
+int BoardState::BoardHeight = 9, BoardState::BoardWidth = 10;
+int BoardState::noX = 8, BoardState::noY = 7;
 int **BoardState::board;
-
+clock_t BoardTree::StartTime;
 int main()
 {
-	srand((unsigned int) time(0));
+//	srand((unsigned int) time(0));
 
-	BoardTree *boardTree= new BoardTree(0);
+	BoardTree *boardTree= new BoardTree(1);
+	std::cout << clock() - BoardTree::StartTime << std::endl;
 
 //	Round 1
-	boardTree->MoveRoot(std::make_pair(0, 3));
+	BoardTree::StartTime = clock();
 
 	std::pair<int, int> put = boardTree->MonteCarloTreeSearch();
 
-	boardTree->MoveRoot(put);
+	std::cout << clock() - BoardTree::StartTime << std::endl;
 
 //	Round 2
-	boardTree->MoveRoot(std::make_pair(1, 5));
+	BoardTree::StartTime = clock();
+	boardTree->MoveRoot(put);
+
+	boardTree->MoveRoot(std::make_pair(0, 4));
 
 	put = boardTree->MonteCarloTreeSearch();
 
-	boardTree->MoveRoot(put);
+	std::cout << clock() - BoardTree::StartTime << std::endl;
 
 //	Round 3
-	boardTree->MoveRoot(std::make_pair(0, 6));
+	BoardTree::StartTime = clock();
+	boardTree->MoveRoot(put);
+
+	boardTree->MoveRoot(std::make_pair(1, 4));
 
 	put = boardTree->MonteCarloTreeSearch();
 
-	boardTree->MoveRoot(put);
+	std::cout << clock() - BoardTree::StartTime << std::endl;
 
 //	Round 4
-	boardTree->MoveRoot(std::make_pair(1, 6));
+	BoardTree::StartTime = clock();
+	boardTree->MoveRoot(put);
+
+	boardTree->MoveRoot(std::make_pair(2, 4));
 
 	put = boardTree->MonteCarloTreeSearch();
 
-	boardTree->MoveRoot(put);
+	std::cout << clock() - BoardTree::StartTime << std::endl;
 
 //	Round 5
-	boardTree->MoveRoot(std::make_pair(2, 5));
+	BoardTree::StartTime = clock();
+	boardTree->MoveRoot(put);
+
+	boardTree->MoveRoot(std::make_pair(2, 6));
 
 	put = boardTree->MonteCarloTreeSearch();
 
-	boardTree->MoveRoot(put);
+	std::cout << clock() - BoardTree::StartTime << std::endl;
 
 //	Round 6
-	boardTree->MoveRoot(std::make_pair(0, 0));
+	BoardTree::StartTime = clock();
+	boardTree->MoveRoot(put);
+
+	boardTree->MoveRoot(std::make_pair(0, 8));
 
 	put = boardTree->MonteCarloTreeSearch();
 
 	boardTree->MoveRoot(put);
+	std::cout << clock() - BoardTree::StartTime << std::endl;
 
 }
