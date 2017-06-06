@@ -1,3 +1,6 @@
+# Prerequisites
+*.d
+
 # Compiled Object files
 *.slo
 *.lo
@@ -28,12 +31,32 @@
 *.out
 *.app
 
-# Cmake
+# CMake
+build
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
+Testing
 Makefile
 cmake_install.cmake
 install_manifest.txt
+compile_commands.json
 CTestTestfile.cmake
 cmake-build-debug/
+
+# C++ objects and libs
+*.slo
+*.lo
+*.o
+*.a
+*.la
+*.lai
+*.so
+*.dll
+*.dylib
+
+
+# CLion
+*.iml
+*.xml
+*.name
